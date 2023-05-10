@@ -1,0 +1,7 @@
+.EditProfileForm {
+    padding: var(--default-padding);
+}
+
+.EditProfileForm__input {
+    margin-bottom: 24px;
+}
