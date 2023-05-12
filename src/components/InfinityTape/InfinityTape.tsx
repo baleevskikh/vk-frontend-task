@@ -6,20 +6,14 @@ import {List} from "../List";
 import {Post} from "../Post";
 import {Placeholder} from "../Placeholder";
 
-interface PostsListProps {
-    username: string
-}
 
-export const PostsList: FC<PostsListProps> = ({username}) => {
+export const InfinityTape: FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     const [posts, setPosts] = useState<IPost[]>([])
 
     useEffect(() => {
-        PostService.getUserPosts(username).then(response => {
-            setPosts(response.data)
-        }).catch(error => {
-        }).finally(() => setIsLoading(false))
+
     }, [])
 
     if (isLoading) return <Preloader/>

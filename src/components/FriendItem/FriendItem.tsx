@@ -2,36 +2,29 @@ import React, {FC, useState} from 'react';
 import styles from './FriendItem.module.css'
 import {Avatar} from "../../ui/Avatar";
 import {IUser} from "../../models/IUser";
-import {Button} from "../../ui/Button";
-import UserService from "../../services/UserService";
+
+import {ToggleFriendButton} from "../ToggleFriendButton";
+import {useNavigate} from "react-router-dom";
 
 interface FriendItemProps {
     user: IUser
-    friends: boolean
 }
 
-export const FriendItem: FC<FriendItemProps> = ({user, friends}) => {
+export const FriendItem: FC<FriendItemProps> = ({user}) => {
 
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const navigate = useNavigate();
 
-    const addFriend = async () => {
-        setIsLoading(true)
-        await UserService.addFriend(user.id).catch(error => {})
-        setIsLoading(false)
-    }
-
-    const removeFriend = async () => {
-        setIsLoading(true)
-        await UserService.removeFriend(user.id).catch(error => {})
-        setIsLoading(false)
+    function handleClick() {
+        navigate(`/profile/${user.username}`);
     }
 
     return (
         <div className={styles.FriendItem}>
-            <Avatar size={48} username={user.name}/>
-            <p className={styles.FriendItem__info}>{user.name} <br/><span>{user.username}</span></p>
-            {!friends && <Button loading={isLoading} onClick={addFriend} size={'sm'}>Добавить</Button>}
-            {friends && <Button loading={isLoading} onClick={removeFriend} mode={'bordered'} size={'sm'}>Удалить</Button>}
+            <div onClick={handleClick} className={styles.FriendItem__info_wrapper}>
+                <Avatar size={48} username={user.name}/>
+                <p className={styles.FriendItem__info}>{user.name} <br/><span>{user.username}</span></p>
+            </div>
+            <ToggleFriendButton userId={user.id} friendStatus={user.friendStatus} size={'sm'}/>
         </div>
     )
 }

@@ -13,6 +13,7 @@
     "@vkontakte/icons": "^2.32.1",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
+    "date-fns": "^2.30.0",
     "mobx": "^6.9.0",
     "mobx-react-lite": "^3.4.3",
     "react": "^18.2.0",

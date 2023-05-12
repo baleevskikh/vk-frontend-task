@@ -1,7 +1,7 @@
 .ProfileBlock {
     padding: var(--default-padding);
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     border-bottom: 1px solid var(--border-color);
 }
 .ProfileBlock__avatar {
@@ -9,8 +9,8 @@
 }
 .ProfileBlock__grid {
     display: grid;
-    grid-template-areas: 'name button' 'bio bio' 'info info';
-    row-gap: 20px;
+    grid-template-areas: 'name button' 'bio bio' 'other other' 'info info';
+    row-gap: 12px;
     width: 100%;
     align-items: center;
 }
@@ -18,7 +18,7 @@
     grid-area: name;
     font-size: 20px;
     font-weight: 700;
-    justify-self: start;
+    justify-self: flex-start;
 }
 .ProfileBlock__name span {
     font-size: 16px;
@@ -33,6 +33,22 @@
     grid-area: button;
     justify-self: end;
 }
+
+.ProfileBlock__other {
+    grid-area: other;
+}
+.ProfileBlock__other_item {
+    display: flex;
+    line-height: 160%;
+    font-size: 16px;
+    color: var(--muted-color);
+    align-items: center;
+}
+.ProfileBlock__other_item svg {
+    color: var(--accent-color);
+    margin-right: 8px;
+}
+
 .ProfileBlock__info {
     grid-area: info;
     display: grid;

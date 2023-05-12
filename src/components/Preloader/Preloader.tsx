@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {FC, HTMLAttributes} from 'react'
 import styles from './Preloader.module.css'
 import {Spinner} from "../../ui/Spinner";
 
-export const Preloader = () => {
+export const Preloader: FC<HTMLAttributes<HTMLDivElement>> = ({...restProps}) => {
     return (
-        <div className={styles.Preloader}>
+        <div {...restProps} className={styles.Preloader}>
             <Spinner/>
         </div>
     )

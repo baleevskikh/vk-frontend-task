@@ -8,7 +8,6 @@ import {Friends} from "./pages/Friends";
 import {Profile} from "./pages/Profile";
 import {EditProfile} from "./pages/EditProfile";
 import {Peoples} from "./pages/Peoples";
-import {Header} from "./components/Header";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
 import logo from './assets/logo.svg'
@@ -45,9 +44,9 @@ const App = () => {
                         <Route path={'friends'} element={<Friends/>}/>
                         <Route path={'edit-profile'} element={<EditProfile/>}/>
                         <Route path={'peoples'} element={<Peoples/>}/>
+                        <Route path={'profile/:username'} element={<Profile/>}/>
                     </>
                 }
-                <Route path={'profile/:username'} element={<Profile/>}/>
             </Route>
         </Routes>
     )

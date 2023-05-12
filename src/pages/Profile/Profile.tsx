@@ -13,8 +13,8 @@ export const Profile = () => {
     return (
         <>
             <Header title={`@${username}`}/>
-            {username && <ProfileBlock username={username} owner={username == store.user.username}/>}
-            {store.user.username == username && <PostForm/>}
+            {username && <ProfileBlock username={username} owner={username === store.user.username}/>}
+            {store.user.username === username && <PostForm/>}
             {username && <PostsList username={username}/>}
         </>
     )

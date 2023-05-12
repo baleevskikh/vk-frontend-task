@@ -9,11 +9,15 @@
 .FriendItem:hover {
     background-color: var(--post-hover);
 }
+.FriendItem__info_wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
 .FriendItem__info {
     font-size: 16px;
     font-weight: 700;
     margin-left: 12px;
-    margin-right: auto;
 }
 .FriendItem__info span {
     font-size: 13px;

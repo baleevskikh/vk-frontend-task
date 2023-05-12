@@ -11,6 +11,7 @@
   box-sizing: border-box;
   height: var(--height);
   font-size: var(--font-size);
+  position: relative;
 }
 
 .Button:hover {
@@ -74,5 +75,12 @@
 }
 
 .Button--loading span:first-child {
-  display: none;
+  opacity: 0;
+}
+.Button__spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

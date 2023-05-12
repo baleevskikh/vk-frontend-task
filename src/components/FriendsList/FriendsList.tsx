@@ -24,7 +24,7 @@ export const FriendsList = () => {
     return (
         <>
             {users.length === 0 && <Placeholder>У вас нет друзей</Placeholder>}
-            <List items={users} renderItem={(user: IUser) => <FriendItem friends user={user} key={user.id}/>}/>
+            <List items={users} renderItem={(user: IUser) => <FriendItem user={user} key={user.id}/>}/>
         </>
     )
 }

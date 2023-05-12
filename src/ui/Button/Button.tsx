@@ -12,7 +12,7 @@ export interface UIButtonProps {
     disabled?: boolean
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, UIButtonProps {}
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, UIButtonProps {}
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = (
     {
@@ -39,7 +39,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (
             {...restProps}
         >
             <span>{children}</span>
-            {loading && <Spinner size={'rg'}/>}
+            {loading && <Spinner className={styles.Button__spinner} size={'rg'}/>}
         </button>
     )
 }

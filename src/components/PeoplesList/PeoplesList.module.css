@@ -21,6 +21,7 @@
     margin-left: 16px;
     margin-right: 12px;
     color: var(--muted-color);
+    width: 22px;
 }
 .PeoplesList__input_wrapper:focus-within .PeoplesList__input_icon {
     color: var(--accent-color);
@@ -38,9 +39,4 @@
 }
 .PeoplesList__input:focus {
     outline: 0;
-}
-.PeoplesList__spinner {
-    width: auto;
-    color: var(--accent-color);
-    margin-right: 10px;
 }

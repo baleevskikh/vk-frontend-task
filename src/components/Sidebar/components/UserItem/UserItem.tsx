@@ -6,13 +6,14 @@ import {Avatar} from "../../../../ui/Avatar";
 interface UserItemProps extends HTMLAttributes<HTMLDivElement> {
     name: string
     username: string
+    avatar: string
 }
 
-export const UserItem = ({name, username, ...restProps}: UserItemProps) => {
+export const UserItem = ({name, username, avatar, ...restProps}: UserItemProps) => {
     return (
         <div className={styles.UserItem__wrapper} {...restProps}>
             <div className={styles.UserItem}>
-                <Avatar className={styles.UserItem__avatar} username={name} size={40}/>
+                <Avatar className={styles.UserItem__avatar} username={name} size={40} src={avatar}/>
                 <div className={styles.UserItem__info}>
                     <span className={styles.UserItem__name}>{name}</span>
                     <br/>

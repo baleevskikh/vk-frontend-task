@@ -10,8 +10,9 @@ import {
     Icon28UsersOutline
 } from '@vkontakte/icons'
 import {UserItem} from "./components/UserItem";
+import {observer} from "mobx-react-lite";
 
-export const Sidebar = () => {
+export const Sidebar = observer(() => {
     const {store} = useContext(Context)
 
     const logout = async () => {
@@ -48,9 +49,10 @@ export const Sidebar = () => {
                 </nav>
 
                 {store.isAuth &&
-                    <UserItem onClick={logout} name={store.user.name} username={store.user.username}/>
+                    <UserItem onClick={logout} avatar={store.user.avatar} name={store.user.name}
+                              username={store.user.username}/>
                 }
             </div>
         </header>
     )
-}
+})
